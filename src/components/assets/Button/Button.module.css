@@ -1,0 +1,7 @@
+.button {
+    max-width: 100px;
+    width: 100%;
+    height: 40px;
+    border-color: aqua;
+    margin-bottom: 20px;
+}

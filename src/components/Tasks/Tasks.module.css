@@ -1,0 +1,6 @@
+.task_el {
+    width: 500px;
+    justify-content: space-between;
+    display: flex;
+
+}
