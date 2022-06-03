@@ -56,3 +56,30 @@
 .task_el .right svg:first-child {
     margin-right: 5px;
 }
+
+.change_task {
+    transform: translateY(-31px);
+    max-width: 364px;
+    height: 85px;
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.change_task input {
+    max-width: 160px;
+}
+.change_task button {
+    font-size: 20px;
+
+}

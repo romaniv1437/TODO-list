@@ -23,23 +23,26 @@ const TaskAddForm = (props) => {
     return (
         <>
             {isForm ? <div className={s.addForm}>
-                <CustomInput placeholder='New task' value={text} onChange={(e) => setText(e.target.value)}/>
-                <Select
-                    value={difficulty}
-                    onChange={diff => setDifficulty(diff)}
-                    defaultValue='Task difficulty'
-                    options={[
-                        {value: 'easy'},
-                        {value: 'medium'},
-                        {value: 'hard'},
-                    ]}
-                />
-                <CustomButton onClick={() => {
-                    onAddTask(text);
-                    showForm();
-                }}>Add task</CustomButton>
-                <AiFillCloseCircle onClick={showForm}/>
-            </div> : <div className={s.icon_form}>
+                <div className={s.form__background}>
+                    <CustomInput placeholder='New task' value={text} onChange={(e) => setText(e.target.value)}/>
+                    <Select
+                        value={difficulty}
+                        onChange={diff => setDifficulty(diff)}
+                        defaultValue='Task difficulty'
+                        options={[
+                            {value: 'easy'},
+                            {value: 'medium'},
+                            {value: 'hard'},
+                        ]}
+                    />
+                    <CustomButton onClick={() => {
+                        onAddTask(text);
+                        showForm();
+                    }}>Add task</CustomButton>
+                    <AiFillCloseCircle onClick={showForm}/>
+                </div>
+                </div>
+                : <div className={s.icon_form}>
                 <AiFillPlusCircle onClick={showForm}/>
             </div>}
         </>
