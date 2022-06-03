@@ -1,40 +1,37 @@
-import './App.css';
 import {useMemo, useState} from "react";
 import TaskAddForm from "./components/TaskAddForm/TaskAddForm";
 import Tasks from "./components/Tasks/Tasks";
 import TaskFilter from "./components/TaskFilter/TaskFilter";
+import s from './App.module.css';
+import Header from "./components/Header/Header";
 
 function App() {
 
-    const [tasks, setTasks] = useState([
-        {id: 1, title: 'Перше завдання', text: 'вивчити html i css'},
-        {id: 2, title: 'Друге завдання', text: 'вивчити JavaScript'},
-        {id: 3, title: 'Третє завдання', text: 'вивчити ReactJS'},
-    ])
-    const [filter, setFilter] = useState({sort: '', query: ''})
+    const [tasks, setTasks] = useState([])
+    const [filter, setFilter] = useState({query: ''})
     const addTask = (newTask) => {
         setTasks([...tasks, newTask])
     }
     const removeTask = (taskId) => {
         setTasks(tasks.filter(task => task.id !== taskId))
     }
-    const sortedTask = useMemo(() => {
-            console.log('SORTED')
-            if (filter.sort) {
-                return [...tasks].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]))
-            }
-            return tasks
-        }, [filter.sort, tasks])
-    const sortedAndSearchedTask = useMemo(() => {
-        return sortedTask.filter(task => task.title.toLowerCase().includes(filter.query))
-    }, [filter.query, sortedTask])
+    const searchedTask = useMemo(() => {
+        return [...tasks].filter(task => task.text.toLowerCase().includes(filter.query))
+    }, [filter.query, tasks])
     return (
-        <div className="App">
-            <h1>Список задач</h1>
-            <TaskAddForm addTask={addTask}/>
-            <TaskFilter filter={filter} setFilter={setFilter}/>
-            <Tasks tasks={sortedAndSearchedTask} removeTask={removeTask}/>
+        <div className={s.wrapper}>
+            <div className={s.app}>
+                <Header />
 
+                <div className={s.tasks__container}>
+                    <div className={s.tasks}>
+                        <TaskFilter filter={filter} setFilter={setFilter}/>
+                        <Tasks tasks={searchedTask} removeTask={removeTask}/>
+                    </div>
+                </div>
+
+                <TaskAddForm addTask={addTask}/>
+            </div>
         </div>
     );
 }

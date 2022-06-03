@@ -1,6 +1,35 @@
 .addForm {
-    width: 500px;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    max-width: 401px;
+    width: 90%;
+    min-height: 600px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.82);
+    gap: 15px;
+}
+
+.addForm svg{
+    color: #E53170;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 60px;
+    margin-right: 30px;
+}
+
+.icon_form {
+    align-self: flex-end;
+    margin-bottom: 60px;
+    margin-right: 30px;
+}
+
+.icon_form svg{
+    color: #E53170;
+    width: 70px;
+    height: 70px;
 }

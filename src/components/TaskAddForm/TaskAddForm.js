@@ -2,25 +2,48 @@ import React, {useState} from 'react';
 import CustomInput from "../assets/Input/Input";
 import s from './TaskAddForm.module.css'
 import CustomButton from "../assets/Button/Button";
+import {AiFillPlusCircle, AiFillCloseCircle} from "react-icons/ai";
+import Select from "../assets/Select/Select";
 
 const TaskAddForm = (props) => {
 
-    const [title, setTitle] = useState('')
+    const [isForm, setForm] = useState(false)
     const [text, setText] = useState('')
+    const [difficulty, setDifficulty] = useState('')
 
-    const onAddTask = (title, text) => {
-        let newTask = {id: Date.now(), title, text}
+    const onAddTask = (text) => {
+        let newTask = {id: Date.now(), text, difficulty}
         props.addTask(newTask)
-        setTitle('')
+        console.log(newTask)
         setText('')
     }
 
+    const showForm = () => setForm(!isForm)
+
     return (
-        <div className={s.addForm}>
-            <CustomInput placeholder='Назва задачі' value={title} onChange={(e)=>setTitle(e.target.value)}/>
-            <CustomInput  placeholder='Задача' value={text} onChange={(e)=>setText(e.target.value)}/>
-            <CustomButton onClick={() => onAddTask(title, text)}>Добавити</CustomButton>
-        </div>
+        <>
+            {isForm ? <div className={s.addForm}>
+                <CustomInput placeholder='New task' value={text} onChange={(e) => setText(e.target.value)}/>
+                <Select
+                    value={difficulty}
+                    onChange={diff => setDifficulty(diff)}
+                    defaultValue='Task difficulty'
+                    options={[
+                        {value: 'easy'},
+                        {value: 'medium'},
+                        {value: 'hard'},
+                    ]}
+                />
+                <CustomButton onClick={() => {
+                    onAddTask(text);
+                    showForm();
+                }}>Add task</CustomButton>
+                <AiFillCloseCircle onClick={showForm}/>
+            </div> : <div className={s.icon_form}>
+                <AiFillPlusCircle onClick={showForm}/>
+            </div>}
+        </>
+
     );
 };
 
