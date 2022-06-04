@@ -58,6 +58,7 @@
 }
 
 .change_task {
+    transform: translateY(-31px);
     max-width: 364px;
     height: 85px;
     width: 80%;
