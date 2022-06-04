@@ -7,11 +7,7 @@ import Header from "./components/Header/Header";
 
 function App() {
 
-    const [tasks, setTasks] = useState([
-        {id: 1, text: 'taska', difficulty: 'medium'},
-        {id: 2, text: 'taska2', difficulty: 'medium'},
-        {id: 3, text: 'taska3', difficulty: 'medium'},
-    ])
+    const [tasks, setTasks] = useState([])
     const [filter, setFilter] = useState({query: ''})
     const addTask = (newTask) => {
         setTasks([...tasks, newTask])

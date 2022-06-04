@@ -1,14 +1,15 @@
 .addForm {
+    transform: translate(-20px, -20px);
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 401px;
-    width: 90%;
+    width: 100%;
     min-height: 600px;
+    height: 100%;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.82);
-    gap: 15px;
 }
 
 .form__background {
@@ -21,6 +22,7 @@
     height: 300px;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.9);
+    gap: 15px;
 }
 
 .addForm .form__background svg{
@@ -36,6 +38,10 @@
 
 .addForm .form__background button {
     margin-top: 10px;
+}
+.addForm .form__background input {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .icon_form {

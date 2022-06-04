@@ -14,8 +14,14 @@ a {
 ul, li {
     list-style: none;
 }
+h3 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 body {
+
     line-height: 1;
     font-family: Poppins;
     font-size: 18px;
@@ -24,7 +30,8 @@ body {
 }
 
 .wrapper {
-    height: 100vh;
+    padding: 20px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -33,6 +40,8 @@ body {
 
 
 .app {
+    position: relative;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     background-color: #fff;

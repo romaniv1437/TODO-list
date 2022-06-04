@@ -2,16 +2,14 @@
     width: 100%;
 }
 
-.tasks h3{
+.empty_title{
     margin-top: 50px;
-    text-align: center;
 }
 
 .task_el {
     padding: 15px 10px;
     max-width: 374px;
     height: 85px;
-    width: 90%;
     margin: 0 auto;
     justify-content: space-between;
     display: flex;
@@ -24,6 +22,9 @@
  }
 .task_el:not(:last-child) {
     margin-bottom: 10px;
+}
+.task_el:last-child {
+    margin-bottom: 20px;
 }
 
 .task_el .left p{
@@ -44,6 +45,7 @@
 .task_el .left span {
     background-color: #FCEEF5;
     border-radius: 3px;
+    color: #B07289;
 }
 
 .task_el .right {
@@ -58,10 +60,8 @@
 }
 
 .change_task {
-    transform: translateY(-31px);
     max-width: 364px;
     height: 85px;
-    width: 80%;
     position: absolute;
     left: 0;
     right: 0;
@@ -69,6 +69,7 @@
     margin-right: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
     border-radius: 10px;
@@ -77,9 +78,16 @@
 }
 
 .change_task input {
-    max-width: 160px;
+    max-width: 250px;
 }
-.change_task button {
-    font-size: 20px;
+.change_task .icons {
+    padding-left: 10px;
+}
+.change_task svg {
+    color: #F25F4C;
+    font-size: 18px;
 
+}
+.change_task svg:first-child {
+    margin-right: 5px;
 }
