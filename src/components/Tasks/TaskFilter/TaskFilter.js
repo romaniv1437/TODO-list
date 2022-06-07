@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomInput from "../assets/Input/Input";
+import CustomInput from "../../assets/Input/Input";
 
 const TaskFilter = ({filter, setFilter}) => {
     return (

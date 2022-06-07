@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import CustomInput from "../assets/Input/Input";
+import CustomInput from "../../assets/Input/Input";
 import s from './TaskAddForm.module.css'
-import CustomButton from "../assets/Button/Button";
+import CustomButton from "../../assets/Button/Button";
 import {AiFillPlusCircle, AiFillCloseCircle} from "react-icons/ai";
-import Select from "../assets/Select/Select";
+import Select from "../../assets/Select/Select";
 
 const TaskAddForm = (props) => {
     const [isForm, setForm] = useState(false)
